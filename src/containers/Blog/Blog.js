@@ -29,6 +29,7 @@ class Blog extends Component {
              })
              .catch(error => {
                  console.log('[Blog.js] error occurred...');
+                 console.log(error);
                  this.setState({error: true});
              });
     }
