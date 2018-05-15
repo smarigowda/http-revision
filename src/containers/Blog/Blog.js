@@ -10,8 +10,10 @@ class Blog extends Component {
     state = {
         posts: [],
         selectedPostId: null,
+        error: false,
     }
     componentDidMount() {
+        this.setState({error: false});
         console.log('[Blog] componentDidMount called...');
         axios.get('https://jsonplaceholder.typicode.com/posts')
              .then(response => {
@@ -24,6 +26,10 @@ class Blog extends Component {
                      }
                  })
                  this.setState({ posts: updatedPosts });
+             })
+             .catch(error => {
+                 console.log('[Blog.js] error occurred...');
+                 this.setState({error: true});
              });
     }
 
@@ -42,8 +48,16 @@ class Blog extends Component {
                             this.selectedPostHandler(post.id);
                         }}/>
         })
+        let errorMessage = null;
+        if(this.state.error) {
+            errorMessage = <p style={
+                { textAlign: 'center',
+                  color: 'red' }
+            }>Error Occurred...please try again</p>;
+        }
         return (
             <div>
+                {errorMessage}
                 <section className="Posts">
                     {posts}
                 </section>

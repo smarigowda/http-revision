@@ -16,6 +16,8 @@ class FullPost extends Component {
                     this.setState({
                         loadedPost: response.data
                     })
+                }).catch(error => {
+                    console.log('[FullPost.js componentDidUpdate] error occurred...');
                 });
             }
         }
@@ -25,7 +27,9 @@ class FullPost extends Component {
         axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
              .then(response => {
                  console.log(response);
-             });
+             }).catch(error => {
+                console.log('[FullPost.js deletePostHandler] error occurred...');
+            });
     }
     render () {
         let post = <p style={{
