@@ -14,8 +14,7 @@ class Blog extends Component {
     }
     componentDidMount() {
         this.setState({error: false});
-        console.log('[Blog] componentDidMount called...');
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.get('/posts')
              .then(response => {
                  console.log(response);
                  const posts = response.data.slice(0, 4);
@@ -28,8 +27,6 @@ class Blog extends Component {
                  this.setState({ posts: updatedPosts });
              })
              .catch(error => {
-                 console.log('[Blog.js] error occurred...');
-                 console.log(error);
                  this.setState({error: true});
              });
     }
