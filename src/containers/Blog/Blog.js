@@ -55,7 +55,15 @@ class Blog extends Component {
             }>Error Occurred...please try again</p>;
         }
         return (
-            <div>
+            <div className="Blog">
+                <header>
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/new-port">New Post</a></li>
+                        </ul>
+                    </nav>
+                </header>
                 {errorMessage}
                 <section className="Posts">
                     {posts}
