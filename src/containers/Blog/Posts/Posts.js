@@ -37,7 +37,7 @@ class Posts extends Component {
     const posts = this.state.posts.map(post => {
       return <Post
         key={`${post.userId}_${post.id}`}
-        title={post.title.substring(0, 5)}
+        title={post.title.substring(0, 50)}
         author={post.author}
         clicked={() => {
           this.selectedPostHandler(post.id);
