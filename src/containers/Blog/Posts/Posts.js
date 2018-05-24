@@ -36,7 +36,7 @@ class Posts extends Component {
     console.log('cliked on ', id);
     // this.setState({ selectedPostId: id });
     console.log(this.props);
-    this.props.history.push({ pathname: '/' + id });
+    this.props.history.push({ pathname: this.props.match.url + '/' + id });
   }
 
   render() {
@@ -59,7 +59,7 @@ class Posts extends Component {
         <section className="Posts">
           {posts}
         </section>
-        <Route path="/:id" component={FullPost} />
+        <Route path= { this.props.match.url + '/:id' } component={FullPost} />
       </div>
       
     )
