@@ -42,8 +42,7 @@ class Posts extends Component {
         author={post.author}
         clicked={() => {
           this.selectedPostHandler(post.id);
-        }}
-        {...this.props} />
+        }} />
     })
     return (
       <section className="Posts">
