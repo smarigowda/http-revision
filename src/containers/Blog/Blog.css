@@ -19,9 +19,15 @@
 .Blog a:hover,
 .Blog a:active,
 .Blog a.active {
-    color: #2f3;
+    color: #2de;
 }
 .Blog a.active {
+    padding: 10px;
+    outline: solid;
+}
+
+.Blog a.my-active {
+    color: blue;
     padding: 10px;
     outline: solid;
 }

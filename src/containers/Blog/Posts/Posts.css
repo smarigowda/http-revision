@@ -1,7 +1,5 @@
 .Posts {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 60%;
+  display: block;
+  width: 80%;
   margin: auto;
 }

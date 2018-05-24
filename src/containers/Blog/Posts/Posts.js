@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+
 import Post from '../../../components/Post/Post';
 import axios from '../../../axios';
 import './Posts.css'
@@ -36,14 +38,18 @@ class Posts extends Component {
 
   render() {
     const posts = this.state.posts.map(post => {
-      return <Post
-        key={`${post.userId}_${post.id}`}
-        title={post.title.substring(0, 50)}
-        author={post.author}
-        clicked={() => {
-          this.selectedPostHandler(post.id);
-        }} />
-    })
+      return (
+          <Link to={ '/' + post.id } key={`${post.userId}_${post.id}`}>
+            <Post
+              title={post.title.substring(0, 50)}
+              author={post.author}
+              clicked={() => {
+                this.selectedPostHandler(post.id);
+              }}
+            />
+          </Link>
+      );
+    });
     return (
       <section className="Posts">
         {posts}
