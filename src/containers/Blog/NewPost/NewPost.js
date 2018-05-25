@@ -23,8 +23,8 @@ class NewPost extends Component {
             author: this.state.author
         }).then(response => {
             console.log(response);
-            this.props.history.push('/posts');
-            // this.setState({ submitted: true });
+            // this.props.history.push('/posts');
+            this.setState({ submitted: true });
         })
     }
     
