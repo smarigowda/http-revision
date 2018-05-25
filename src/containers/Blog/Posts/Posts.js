@@ -36,7 +36,7 @@ class Posts extends Component {
     console.log('cliked on ', id);
     // this.setState({ selectedPostId: id });
     console.log(this.props);
-    this.props.history.push({ pathname: this.props.match.url + '/' + id });
+    this.props.history.push({ pathname:  '/posts/' + id });
   }
 
   render() {
